@@ -1,0 +1,74 @@
+.right-sidebar {
+  display: none; /* Hidden on mobile and tablet */
+  width: 320px;
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+  padding: 2rem;
+  border-left: 4px solid var(--ink-dark);
+  background: #F9FAFB;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .right-sidebar {
+    display: flex;
+  }
+}
+
+.right-sidebar-header {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--ink-dark);
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--konoha-orange);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.mini-quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mini-quest-card {
+  background: white;
+  border: 2px solid var(--ink-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 2px 2px 0px var(--ink-dark);
+  transition: transform 0.2s;
+}
+
+.mini-quest-card:hover {
+  transform: translateY(-2px);
+}
+
+.mini-quest-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.1rem;
+  color: var(--konoha-blue);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.mini-quest-meta {
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.85rem;
+  color: var(--konoha-green);
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.empty-sidebar {
+  text-align: center;
+  color: var(--ink-light);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  padding: 2rem 0;
+}

@@ -1,0 +1,129 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--bottom-nav-height);
+  background: var(--konoha-blue);
+  border-top: 4px solid var(--konoha-orange);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+  height: 100%;
+  min-height: 44px; /* Ensure mobile touch target standard */
+  transition: all 0.2s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item span {
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .nav-item span {
+    font-size: 0.75rem;
+    letter-spacing: 0;
+  }
+  
+  .icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.nav-item.active {
+  color: var(--konoha-orange);
+}
+
+.nav-item.active .nav-icon {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 4px rgba(255, 112, 0, 0.4));
+  color: var(--konoha-orange);
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-icon {
+  z-index: 2;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+/* The sliding glowing orb */
+.active-glow-indicator {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: radial-gradient(circle, rgba(255,112,0,0.3) 0%, rgba(255,112,0,0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+/* The slowly spinning shuriken inside the glow */
+.active-glow-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--konoha-orange);
+  background: rgba(255,112,0,0.1);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: spin-shuriken 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes spin-shuriken {
+  0% { transform: translate(-50%, -50%) rotate(45deg); }
+  100% { transform: translate(-50%, -50%) rotate(405deg); }
+}
+
+.nav-item:hover {
+  transform: scale(1.05);
+}
+
+.nav-item:active {
+  transform: scale(0.95);
+}

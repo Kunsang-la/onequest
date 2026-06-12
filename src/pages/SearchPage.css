@@ -1,0 +1,138 @@
+.search-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: -3.5rem auto 3rem auto;
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+.search-input-field {
+  width: 100%;
+  padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+  border-radius: 50px;
+  border: 4px solid white;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.1rem;
+  background: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  color: var(--ink-dark);
+}
+
+.search-input-field:focus {
+  outline: none;
+  border-color: var(--konoha-orange);
+  box-shadow: 0 15px 35px rgba(221, 107, 32, 0.2);
+  transform: translateY(-2px);
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-light);
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.search-input-field:focus + .search-input-icon {
+  color: var(--konoha-orange);
+}
+
+.section-label {
+  font-family: 'Kanit', sans-serif;
+  color: var(--ink-dark);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-list-container {
+  background: white;
+  border-radius: 12px;
+  border: 2px solid var(--wood-light);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  margin-bottom: 2rem;
+}
+
+.user-list-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--wood-light);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  background: white;
+}
+
+.user-list-row:hover {
+  background: #F7FAFC;
+}
+
+.user-list-row:last-child {
+  border-bottom: none;
+}
+
+.row-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--wood-light);
+  margin-right: 1rem;
+}
+
+.row-info {
+  flex: 1;
+}
+
+.row-name {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ink-dark);
+}
+
+.row-username {
+  color: var(--ink-light);
+  font-size: 0.85rem;
+}
+
+.row-xp {
+  font-weight: bold;
+  color: var(--konoha-blue);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.empty-search-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: rgba(0,0,0,0.02);
+  border-radius: 16px;
+  border: 2px dashed var(--wood-light);
+}
+
+.empty-search-state h3 {
+  font-family: 'Kanit', sans-serif;
+  color: var(--ink-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-search-state p {
+  color: var(--ink-light);
+}

@@ -1,0 +1,130 @@
+.profile-container {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.dashboard-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 3px solid var(--accent-green);
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-green);
+  font-family: 'Merriweather', serif;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Level & XP Bar spanning full width */
+.level-card {
+  grid-column: 1 / -1;
+  border-top: 3px solid var(--accent-gold);
+}
+
+.xp-bar-container {
+  width: 100%;
+  height: 12px;
+  background: rgba(139, 69, 19, 0.1);
+  border-radius: 6px;
+  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #D4AF37, #FFD700);
+  border-radius: 6px;
+  transition: width 1s ease-out;
+}
+
+/* Daily Quote Widget */
+.quote-widget {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: #FFF8E7; /* warmer parchment for quote */
+  border-left: 4px solid var(--accent-red);
+}
+
+.quote-text {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.quote-author {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: right;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badge Case styling */
+.badge-case {
+  background: #2F4F4F; /* Dark green velvet inside */
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+  border: 4px solid #3E2723; /* Leather/Wood rim */
+}
+
+.badges-grid {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.badges-grid::-webkit-scrollbar {
+  display: none;
+}

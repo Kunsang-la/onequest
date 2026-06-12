@@ -1,0 +1,143 @@
+.bag-container {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.inventory-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--konoha-blue);
+}
+
+.inventory-header h2 {
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 0px white;
+}
+
+/* Tabs */
+.inventory-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: var(--konoha-blue);
+  padding: 0.5rem;
+  border: 3px solid var(--ink-dark);
+  box-shadow: 2px 2px 0px var(--ink-dark);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.8rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  border: none;
+  background: transparent;
+  white-space: nowrap; /* Keep text on one line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-btn.active {
+  background: var(--scroll-paper);
+  color: var(--konoha-blue);
+  border: 2px solid var(--ink-dark);
+}
+
+@media (max-width: 480px) {
+  .inventory-tabs {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+/* Lists */
+.active-quests-list,
+.completed-quests-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .active-quests-list,
+  .completed-quests-list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+/* Summary Card (Shared styling structure) */
+.summary-card {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.quest-title-summary {
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.completed-quest-card {
+  opacity: 0.8;
+  filter: grayscale(0.5);
+  cursor: default;
+}
+
+/* Empty State Styling */
+.empty-bag-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: transparent;
+}
+
+.empty-bag-icon {
+  margin-bottom: 1.5rem;
+  color: var(--ink-dark);
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.2));
+}
+
+.empty-bag-state h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--konoha-blue);
+  font-family: 'Kanit', sans-serif;
+}
+
+.empty-bag-state p {
+  color: var(--ink-dark);
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+
+/* Badges section */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.6);
+  border: 3px solid var(--ink-dark);
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .badges-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
