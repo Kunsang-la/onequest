@@ -99,6 +99,7 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (error) {
       console.error('Error fetching/creating profile:', error.message);
+      alert("CRITICAL ERROR: Failed to create your profile in the database! Reason: " + error.message);
     } finally {
       setIsLoading(false);
     }
