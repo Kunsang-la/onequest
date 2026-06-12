@@ -119,10 +119,11 @@ export default function TavernFeed() {
         .from('user_quests')
         .select(`
           *,
-          profiles (display_name, avatar_url, username),
+          profiles!inner (display_name, avatar_url, username, is_admin),
           post_courage (user_id)
         `)
         .not('proof_image', 'is', null)
+        .eq('profiles.is_admin', false)
         .order('completed_at', { ascending: false });
         
       if (session?.user?.id) {
