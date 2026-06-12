@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Coins, Flame, Target, Trophy, Clock, X, Edit3, Image as ImageIcon } from 'lucide-react';
+import { Coins, Flame, Target, Trophy, Clock, X, Edit3, Image as ImageIcon, LogOut } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../context/AuthContext';
 import { BadgeIcon } from '../components/Badges';
@@ -8,7 +8,7 @@ import { BADGE_DEFINITIONS } from '../lib/badges';
 import './Profile.css';
 
 export default function Profile({ stats, completedQuests }) {
-  const { updateProfile, user } = useAuth();
+  const { updateProfile, user, logout } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(stats?.userName || '');
   const [usernameInput, setUsernameInput] = useState(stats?.guildUsername || '');
@@ -99,11 +99,16 @@ export default function Profile({ stats, completedQuests }) {
         {/* Adventurer ID Card */}
         <div className="adventurer-card">
           <div className="card-header">
-          <div className="card-guild-stamp">ONEQUEST REGISTRY</div>
-          <button className="edit-card-btn" onClick={() => setIsEditing(true)}>
-            <Edit3 size={18} />
-          </button>
-        </div>
+            <div className="card-guild-stamp">ONEQUEST REGISTRY</div>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button className="edit-card-btn" onClick={() => setIsEditing(true)} title="Edit Profile">
+                <Edit3 size={18} />
+              </button>
+              <button className="edit-card-btn" onClick={logout} title="Log Out" style={{ color: '#E53E3E', borderColor: 'rgba(229, 62, 62, 0.3)' }}>
+                <LogOut size={18} />
+              </button>
+            </div>
+          </div>
 
         <div className="card-body">
           <div className="card-avatar-wrapper">
