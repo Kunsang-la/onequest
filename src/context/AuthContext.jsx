@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
           username: currentUsername,
           display_name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'Adventurer',
           avatar_url: user.user_metadata?.avatar_url || '/anime_avatar.png',
-          guild_rank: 'F-Rank Explorer',
+          guild_rank: '🌱 New Arrival',
           coins: 0,
           xp: 0,
           is_admin: false

@@ -239,7 +239,7 @@ function App() {
     userName: 'Adventurer',
     guildUsername: 'adventurer',
     userBio: 'Ready for the next quest!',
-    title: 'F-Rank Explorer',
+    title: '🌱 New Arrival',
     avatarUrl: '/anime_avatar.png',
     coins: 0,
     xp: 0,
