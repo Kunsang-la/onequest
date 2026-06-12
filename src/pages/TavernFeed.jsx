@@ -112,6 +112,7 @@ export default function TavernFeed() {
   const { session } = useAuth();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [dbError, setDbError] = useState('');
 
   useEffect(() => {
     const fetchFeed = async () => {
@@ -132,7 +133,9 @@ export default function TavernFeed() {
 
       const { data, error } = await query;
         
-      if (!error && data) {
+      if (error) {
+        setDbError(error.message);
+      } else if (data) {
         setPosts(data);
       }
       setLoading(false);
@@ -152,7 +155,11 @@ export default function TavernFeed() {
       </div>
 
       <div className="feed-list">
-        {loading ? (
+        {dbError ? (
+          <div style={{ textAlign: 'center', padding: '2rem', background: '#FED7D7', color: '#E53E3E', borderRadius: '12px' }}>
+            <strong>Database Error:</strong> {dbError}
+          </div>
+        ) : loading ? (
           <p style={{ textAlign: 'center', color: 'var(--ink-light)' }}>Loading the tavern bulletin...</p>
         ) : posts.length > 0 ? (
           posts.map(post => (
