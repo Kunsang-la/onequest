@@ -45,8 +45,12 @@ export default function Profile({ stats, completedQuests }) {
       }
     }
 
-    await updateProfile({ display_name: name, username: usernameInput, bio: bio, avatar_url: avatar });
-    setIsEditing(false);
+    try {
+      await updateProfile({ display_name: name, username: usernameInput, bio: bio, avatar_url: avatar });
+      setIsEditing(false);
+    } catch (err) {
+      setErrorMsg("Failed to update profile: " + err.message);
+    }
   };
 
   const handleImageUpload = (e) => {

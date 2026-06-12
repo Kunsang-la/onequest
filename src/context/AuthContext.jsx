@@ -118,6 +118,7 @@ export const AuthProvider = ({ children }) => {
       setProfile(data);
     } catch (error) {
       console.error('Error updating profile:', error.message);
+      throw error;
     }
   };
 
