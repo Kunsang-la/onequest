@@ -111,11 +111,13 @@ export const AuthProvider = ({ children }) => {
         .from('profiles')
         .update(updates)
         .eq('id', session.user.id)
-        .select()
-        .single();
+        .select();
       
       if (error) throw error;
-      setProfile(data);
+      if (!data || data.length === 0) {
+        throw new Error("Database rejected update. You likely need to add an 'UPDATE' policy for the profiles table in Supabase.");
+      }
+      setProfile(data[0]);
     } catch (error) {
       console.error('Error updating profile:', error.message);
       throw error;
