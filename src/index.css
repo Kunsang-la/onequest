@@ -68,15 +68,29 @@ body {
 /* Mobile-only optimizations */
 @media (max-width: 768px) {
   .asset-container {
-    padding: 1rem !important; /* Smaller padding on phones to save space */
+    padding: 0.75rem !important; /* Optimal app-like padding */
+    border-width: 2px;
+    box-shadow: 1px 1px 0px var(--ink-dark);
+    border-radius: 8px; /* Slightly rounder for mobile feel */
   }
 
   .page-title-banner {
-    font-size: 1.5rem !important; /* Scale down titles slightly on mobile */
+    font-size: 1.3rem !important; /* Scale down titles to standard app size */
+    margin-bottom: 0.25rem;
+  }
+  
+  .page-subtitle {
+    font-size: 0.85rem !important;
   }
 
   button, .btn-primary {
     min-height: 44px; /* Force minimum touch target size for mobile */
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  body {
+    font-size: 14px; /* Modern mobile base font size */
   }
 }
 

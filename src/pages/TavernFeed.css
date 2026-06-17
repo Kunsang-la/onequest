@@ -134,3 +134,44 @@
   left: 20px;
   pointer-events: none;
 }
+
+@media (max-width: 480px) {
+  .tavern-container {
+    padding: 0;
+  }
+  .tavern-header {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  .feed-list {
+    gap: 0;
+  }
+  .post-card {
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    padding: 1rem 0 !important;
+    box-shadow: none !important;
+    border-top: 1px solid var(--wood-medium);
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+  }
+  .post-header {
+    padding: 0 1rem;
+  }
+  .proof-container {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin: 0.5rem 0;
+  }
+  .post-reflection {
+    margin: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .post-actions {
+    padding: 0 1rem;
+  }
+}

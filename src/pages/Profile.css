@@ -107,10 +107,37 @@
 }
 
 @media (max-width: 480px) {
+  .profile-container {
+    padding: 0.5rem;
+  }
+  .adventurer-card {
+    padding: 1rem;
+  }
   .card-body {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    text-align: center;
+    text-align: left;
+    gap: 1rem;
+  }
+  .card-avatar {
+    width: 75px;
+    height: 75px;
+  }
+  .card-name {
+    font-size: 1.25rem;
+  }
+  .card-username {
+    font-size: 0.85rem;
+  }
+  .card-level-badge {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.4rem;
+    bottom: -8px;
+  }
+  .card-bio-section {
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
   }
 }
 
@@ -274,6 +301,16 @@
 @media (max-width: 480px) {
   .stats-ledger {
     grid-template-columns: 1fr; /* Stack on small mobile */
+  }
+  .ledger-item {
+    padding: 0.6rem;
+  }
+  .ledger-value {
+    font-size: 1rem;
+  }
+  .ledger-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
