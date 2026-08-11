@@ -171,3 +171,17 @@
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0px var(--ink-dark);
 }
+
+@media (max-width: 480px) {
+  .board-container { padding: 0.5rem; }
+  .board-header { margin-bottom: 1rem; }
+  .board-header h2 { font-size: 1.5rem; }
+  .summary-card { padding: 0.8rem 1rem; }
+  .quest-title-summary { font-size: 1.15rem; }
+  .quest-detail-modal { padding: 1.5rem 1rem; gap: 0.8rem; }
+  .quest-title-full { font-size: 1.4rem; }
+  .quest-desc-full { padding: 0.8rem; font-size: 0.95rem; }
+  .quest-meta-full { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .quest-actions { flex-direction: column; width: 100%; gap: 0.5rem; }
+  .btn-secondary { width: 100%; text-align: center; }
+}

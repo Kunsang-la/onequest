@@ -141,3 +141,14 @@
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .bag-container { padding: 0.5rem; }
+  .inventory-header { margin-bottom: 1rem; }
+  .inventory-header h2 { font-size: 1.6rem; }
+  .summary-card { padding: 0.8rem 1rem; }
+  .quest-title-summary { font-size: 1.15rem; }
+  .empty-bag-state { padding: 2rem 1rem; }
+  .empty-bag-state h3 { font-size: 1.4rem; }
+  .badges-grid { grid-template-columns: repeat(2, 1fr); padding: 0.8rem; gap: 0.5rem; }
+}

@@ -136,3 +136,13 @@
 .empty-search-state p {
   color: var(--ink-light);
 }
+
+@media (max-width: 480px) {
+  .search-page-container { padding: 0.5rem; }
+  .search-input-field { padding: 1rem 1rem 1rem 2.8rem; font-size: 1rem; }
+  .search-input-icon { left: 24px; }
+  .user-list-row { padding: 0.75rem 1rem; }
+  .row-avatar { width: 40px; height: 40px; margin-right: 0.75rem; }
+  .row-name { font-size: 0.95rem; }
+  .section-label { font-size: 1.2rem; margin-bottom: 1rem; }
+}
