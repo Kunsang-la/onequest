@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, UploadCloud, X, RefreshCw, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { verifyQuestImage } from '../lib/gemini';
 
 export default function MissionReportModal({ reportingQuest, onClose, onSubmit }) {
   const [proofImage, setProofImage] = useState('');
@@ -88,10 +89,23 @@ export default function MissionReportModal({ reportingQuest, onClose, onSubmit }
   const handleSubmit = async () => {
     if (!proofImage || reflection.length < 50) return;
     
-    setIsVerifying(true); // Using this state just for the submission spinner now
+    setIsVerifying(true);
     setVerificationError('');
 
-    // Step 1: Immediate Success (AI Verification Removed)
+    try {
+      const verification = await verifyQuestImage(proofImage, reportingQuest.title);
+      
+      if (!verification.verified) {
+        setVerificationError(verification.reason);
+        setIsVerifying(false);
+        return;
+      }
+    } catch (err) {
+      setVerificationError("An unexpected error occurred during AI verification.");
+      setIsVerifying(false);
+      return;
+    }
+
     setIsSuccess(true);
     await onSubmit(proofImage, reflection);
     setTimeout(() => {
