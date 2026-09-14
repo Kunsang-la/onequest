@@ -15,7 +15,7 @@ CRITICAL RULE: Never say generic things like "Take a picture proving you did it"
 Examples: 'Show a photo of your perfectly clean desk!', 'Snap a pic of the trash bags you filled!'
 Do not include quotes around your answer.`;
 
-  const modelsToTry = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro"];
+  const modelsToTry = ["gemini-flash-latest"];
   const timeoutPromise = new Promise((_, reject) => 
     setTimeout(() => reject(new Error("Timeout")), 8000)
   );
@@ -63,7 +63,7 @@ Answer strictly with 'YES' or 'NO'.`;
     }
   ];
 
-  const modelsToTry = ["gemini-1.5-flash"];
+  const modelsToTry = ["gemini-flash-latest"];
   let lastError = null;
 
   const timeoutPromise = new Promise((_, reject) => 
