@@ -63,7 +63,7 @@ Answer strictly with 'YES' or 'NO'.`;
     }
   ];
 
-  const modelsToTry = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro"];
+  const modelsToTry = ["gemini-1.5-flash"];
   let lastError = null;
 
   const timeoutPromise = new Promise((_, reject) => 
@@ -91,11 +91,13 @@ Answer strictly with 'YES' or 'NO'.`;
       console.warn(`Model ${modelName} failed:`, error.message);
       lastError = error;
       
-      // If it's a timeout, stop trying other models because the network is just slow
       if (error.message.includes("took too long")) {
         return { verified: false, reason: error.message };
       }
-      // Otherwise, continue to the next model in the fallback array
+      
+      if (error.message.includes("503") || error.message.includes("high demand") || error.message.includes("Service Unavailable")) {
+        return { verified: false, reason: "The AI Guildmaster is currently overwhelmed by too many adventurers (503 High Demand). Please wait 10 seconds and try submitting again!" };
+      }
     }
   }
 
